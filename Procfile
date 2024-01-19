@@ -1,0 +1,1 @@
+    web: gunicorn pan_card_tampering:app

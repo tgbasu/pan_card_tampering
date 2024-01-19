@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Tampering Detection</title>
+    <style>
+        body {
+            background-color: #87CEEB; /* Sky Blue */
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff; /* White */
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .btn {
+            border: 2px solid gray;
+            color: gray;
+            background-color: white;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        .filename {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .submit-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Tampering Detection</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div class="upload-btn-wrapper">
+                <button class="btn">Choose an Image</button>
+                <input type="file" name="file" id="file" accept=".jpg, .jpeg, .png" onchange="displayFileName()">
+            </div>
+            <p class="filename" id="filename"></p>
+            <input type="submit" class="btn submit-btn" value="Check Tampering">
+        </form>
+    </div>
+
+    <script>
+        function displayFileName() {
+            var fileInput = document.getElementById('file');
+            var filename = document.getElementById('filename');
+            filename.innerHTML = "Selected file: " + fileInput.files[0].name;
+        }
+    </script>
+</body>
+</html>

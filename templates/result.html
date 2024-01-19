@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Tampering Detection - Result</title>
+    <style>
+        body {
+            background-color: #87CEEB; /* Sky Blue */
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff; /* White */
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .images {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .image-container {
+            border: 2px solid white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Tampering Detection</h1>
+        <div class="result">
+            <p>SSIM Score: {{ ssim_score }}</p>
+            <p>Classification: {{ classification }}</p>
+        </div>
+
+        <h2>Original Image</h2>
+        <div class="images">
+            <div class="image-container">
+                <img src="data:image/png;base64,{{ original_img }}" alt="Original Image">
+            </div>
+        </div>
+
+        <h2>Uploaded Image</h2>
+        <div class="images">
+            <div class="image-container">
+                <img src="data:image/png;base64,{{ uploaded_img }}" alt="Uploaded Image">
+            </div>
+        </div>
+
+        <h2>Difference Image</h2>
+        <div class="images">
+            <div class="image-container">
+                <img src="data:image/png;base64,{{ diff_img }}" alt="Difference Image">
+            </div>
+        </div>
+
+        <h2>Threshold Image</h2>
+        <div class="images">
+            <div class="image-container">
+                <img src="data:image/png;base64,{{ thresh_img }}" alt="Threshold Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
