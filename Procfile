@@ -1,1 +1,1 @@
-    web: gunicorn pancardtampering89:app
+    web: gunicorn app:app
