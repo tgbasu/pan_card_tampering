@@ -10,7 +10,7 @@ from io import BytesIO
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
 ORIGINAL_IMAGE_PATH = 'pan_card_tampering/image'
-#app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 @app.route('/uploads/<filename>')
