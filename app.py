@@ -91,7 +91,7 @@ def index():
         ssim_score = calculate_ssim(original_path, filename)
 
         # Set the SSIM threshold for classification
-        ssim_threshold = 0.75
+        ssim_threshold = 0.65
         classification = "Original" if ssim_score >= ssim_threshold else "Tampered"
 
         # Convert images to base64 strings for display in HTML
